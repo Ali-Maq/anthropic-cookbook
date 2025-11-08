@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Anthropic SDK Learning Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>🎓 Learn Anthropic SDK</h1>
+            </div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="#modules">Modules</a>
+                <a href="#progress">Progress</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Master the Anthropic Python SDK</h1>
+            <p class="hero-subtitle">Interactive, hands-on learning like DataCamp & Codecademy</p>
+            <p class="hero-description">
+                Learn by doing with our interactive code editor, instant feedback, and real-world projects.
+                Every line explained. Progress tracked. Skills tested.
+            </p>
+            <button class="cta-button" onclick="scrollToModules()">Start Learning →</button>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Interactive Lessons</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Coding Exercises</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4h</div>
+                <div class="stat-label">Learning Time</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why This Learning Platform?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Interactive Code Editor</h3>
+                    <p>Write code directly in your browser with syntax highlighting and instant execution</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Automatic Testing</h3>
+                    <p>Get instant feedback on your code with our built-in test runner</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Track your journey through modules and celebrate milestones</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Line-by-Line Explanations</h3>
+                    <p>Every single line of code explained in simple language</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Real-World Projects</h3>
+                    <p>Build practical applications like chatbots, data extractors, and AI agents</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Progressive Learning</h3>
+                    <p>Start from basics, build to advanced topics at your own pace</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="modules">
+        <div class="container">
+            <h2>Learning Modules</h2>
+
+            <!-- Module 1 -->
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-badge green">Module 1</div>
+                    <h3>Foundations</h3>
+                    <span class="module-duration">2.5-3.5 hours</span>
+                </div>
+                <p class="module-description">
+                    Master the basics of the Anthropic API. Learn to make calls, build conversations,
+                    control outputs, and work with structured data.
+                </p>
+                <div class="lesson-list" id="module-1-lessons">
+                    <!-- Lessons will be loaded here by JavaScript -->
+                </div>
+                <div class="module-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-module-1" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text-1">0% Complete</span>
+                </div>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="module-card">
+                <div class="module-header">
+                    <div class="module-badge blue">Module 2</div>
+                    <h3>Tool Use Basics</h3>
+                    <span class="module-duration">3-4 hours</span>
+                </div>
+                <p class="module-description">
+                    Give Claude superpowers! Learn to create tools, build agents, and connect Claude
+                    to external functions and APIs.
+                </p>
+                <div class="lesson-list" id="module-2-lessons">
+                    <!-- Lessons will be loaded here by JavaScript -->
+                </div>
+                <div class="module-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-module-2" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text-2">0% Complete</span>
+                </div>
+            </div>
+
+            <!-- Coming Soon Modules -->
+            <div class="module-card coming-soon">
+                <div class="module-header">
+                    <div class="module-badge purple">Coming Soon</div>
+                    <h3>Vision & Multimodal</h3>
+                    <span class="module-duration">3-4 hours</span>
+                </div>
+                <p class="module-description">
+                    Work with images, documents, and PDFs. Learn vision capabilities, OCR, chart analysis, and more.
+                </p>
+            </div>
+
+            <div class="module-card coming-soon">
+                <div class="module-header">
+                    <div class="module-badge orange">Coming Soon</div>
+                    <h3>RAG Systems</h3>
+                    <span class="module-duration">4-5 hours</span>
+                </div>
+                <p class="module-description">
+                    Build Retrieval Augmented Generation systems. Learn embeddings, vector search, and production RAG.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Section -->
+    <section id="progress" class="my-progress">
+        <div class="container">
+            <h2>Your Progress</h2>
+            <div class="progress-dashboard">
+                <div class="progress-stat">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-info">
+                        <h4 id="lessons-completed">0</h4>
+                        <p>Lessons Completed</p>
+                    </div>
+                </div>
+                <div class="progress-stat">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-info">
+                        <h4 id="time-spent">0h</h4>
+                        <p>Time Spent Learning</p>
+                    </div>
+                </div>
+                <div class="progress-stat">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-info">
+                        <h4 id="exercises-passed">0</h4>
+                        <p>Exercises Passed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Interactive Anthropic SDK Learning Platform</p>
+            <p>Built with ❤️ for learners | <a href="https://docs.anthropic.com">Official Docs</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script>
+        function scrollToModules() {
+            document.getElementById('modules').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Load lessons when page loads
+        window.addEventListener('DOMContentLoaded', loadLessons);
+    </script>
+</body>
+</html>

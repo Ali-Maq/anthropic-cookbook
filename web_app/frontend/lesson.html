@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson - Interactive Learning</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+</head>
+<body class="lesson-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">🎓 Learn Anthropic SDK</a>
+            </div>
+            <div class="lesson-nav">
+                <button id="prev-exercise" class="nav-btn">← Previous</button>
+                <span id="exercise-counter">Exercise 1 of 5</span>
+                <button id="next-exercise" class="nav-btn">Next →</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="lesson-container">
+        <!-- Left Panel - Instructions -->
+        <div class="instructions-panel">
+            <div class="lesson-header">
+                <div class="lesson-badge" id="lesson-badge">Module 1</div>
+                <h1 id="lesson-title">Your First API Call</h1>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab active" data-tab="instructions">📖 Instructions</button>
+                <button class="tab" data-tab="explanation">🔍 Explanation</button>
+                <button class="tab" data-tab="hints">💡 Hints</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content active" id="tab-instructions">
+                <div id="exercise-instructions">
+                    <h2>Exercise: Your First API Call</h2>
+                    <p>Let's make your first call to the Anthropic API!</p>
+                    <h3>Task:</h3>
+                    <ol>
+                        <li>Import the Anthropic library</li>
+                        <li>Create a client with your API key</li>
+                        <li>Make a messages.create() call</li>
+                        <li>Print the response</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-explanation">
+                <div id="exercise-explanation">
+                    <h2>Line-by-Line Explanation</h2>
+                    <div id="explanation-content">
+                        <p>Detailed explanations will appear here...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="tab-hints">
+                <div id="exercise-hints">
+                    <h2>Hints</h2>
+                    <div id="hints-content">
+                        <p>Click "Show Hint" when you need help!</p>
+                        <button class="hint-btn" onclick="showNextHint()">Show Hint</button>
+                        <div id="hints-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Indicator -->
+            <div class="lesson-progress-sidebar">
+                <h3>Your Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="lesson-progress" style="width: 0%"></div>
+                </div>
+                <p id="exercises-completed-text">0 of 5 exercises completed</p>
+            </div>
+        </div>
+
+        <!-- Right Panel - Code Editor & Output -->
+        <div class="editor-panel">
+            <!-- Code Editor -->
+            <div class="editor-section">
+                <div class="editor-header">
+                    <h3>💻 Code Editor</h3>
+                    <button id="reset-code" class="btn-secondary">Reset Code</button>
+                </div>
+                <textarea id="code-editor"></textarea>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="editor-controls">
+                <button id="run-code" class="btn-primary">▶ Run Code</button>
+                <button id="submit-code" class="btn-success">✓ Submit Answer</button>
+            </div>
+
+            <!-- Output Section -->
+            <div class="output-section">
+                <div class="output-header">
+                    <h3>📊 Output</h3>
+                    <button id="clear-output" class="btn-link">Clear</button>
+                </div>
+                <div id="output-console" class="console"></div>
+            </div>
+
+            <!-- Test Results -->
+            <div class="test-results" id="test-results" style="display: none;">
+                <h3>Test Results</h3>
+                <div id="test-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">🎉</div>
+            <h2>Excellent Work!</h2>
+            <p id="success-message">You've completed this exercise!</p>
+            <div class="modal-actions">
+                <button class="btn-primary" onclick="nextExercise()">Next Exercise →</button>
+                <button class="btn-secondary" onclick="closeModal()">Review Code</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/lesson.js"></script>
+    <script>
+        // Initialize lesson when page loads
+        const lessonId = '{{ lesson_id }}';
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeLesson(lessonId || '1-1');
+        });
+    </script>
+</body>
+</html>
